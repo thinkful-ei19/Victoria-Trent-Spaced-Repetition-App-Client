@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {reduxForm, Field} from 'redux-form';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 
@@ -16,8 +17,14 @@ export class Dashboard extends React.Component {
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
                 <div className="dashboard-protected-data">
-                    Protected data: {this.props.protectedData}
+                    
                 </div>
+                Guess This Element!
+                {/* {this.props.protectedData.symbol} */}
+                <form onSubmit={() => this.props.handleSubmit(values => console.log(values))}>
+                    <Field component='input' type='text' name='answer' required/>
+                    <button>Submit</button>
+                </form>
             </div>
         );
     }
@@ -32,4 +39,6 @@ const mapStateToProps = state => {
     };
 };
 
-export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+export default requiresLogin()(connect(mapStateToProps)(reduxForm({ 
+    form: 'answerQuestion'
+  })(Dashboard)));
