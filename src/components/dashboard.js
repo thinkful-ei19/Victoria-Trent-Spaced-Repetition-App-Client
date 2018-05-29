@@ -20,7 +20,7 @@ export class Dashboard extends React.Component {
                     
                 </div>
                 Guess This Element!
-                {/* {this.props.protectedData.symbol} */}
+                {this.props.protectedData ? this.props.protectedData.symbol : ''}
                 <form onSubmit={() => this.props.handleSubmit(values => console.log(values))}>
                     <Field component='input' type='text' name='answer' required/>
                     <button>Submit</button>
