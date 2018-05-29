@@ -13,6 +13,12 @@ export const fetchProtectedDataError = error => ({
     error
 });
 
+export const SUBMITTED_ANSWER = 'SUBMITTED_ANSWER';
+export const submittedAnswer = answer => ({
+    type: SUBMITTED_ANSWER,
+    answer
+});
+
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/questions`, {

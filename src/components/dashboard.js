@@ -2,11 +2,20 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
 import requiresLogin from './requires-login';
-import {fetchProtectedData} from '../actions/protected-data';
+import {fetchProtectedData, submittedAnswer} from '../actions/protected-data';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
+    }
+
+    onSubmit(value) {
+      const answer = {
+        userId: this.props.userId,
+        question: this.props.protectedData.symbol,
+        ans: value.toLowerCase()
+      }
+      return this.props.dispatch(submittedAnswer(answer))
     }
 
     render() {
@@ -17,13 +26,18 @@ export class Dashboard extends React.Component {
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
                 <div className="dashboard-protected-data">
-                    
                 </div>
                 Guess This Element!
-                {this.props.protectedData ? this.props.protectedData.symbol : ''}
-                <form onSubmit={() => this.props.handleSubmit(values => console.log(values))}>
-                    <Field component='input' type='text' name='answer' required/>
-                    <button>Submit</button>
+                <section>Symbol: {this.props.protectedData ? this.props.protectedData.symbol : ''}</section>
+                <section>Number: {this.props.protectedData ? this.props.protectedData.number : ''}</section>
+
+                <form
+                  className="answer-form"
+                  onSubmit={this.props.handleSubmit(value => this.onSubmit(value.answer))}>
+                <Field component='input' type="text" name="answer"/>
+                <button disabled={this.props.pristine || this.props.submitting}>
+                  Submit!
+                </button>
                 </form>
             </div>
         );
@@ -33,12 +47,13 @@ export class Dashboard extends React.Component {
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
+        userId: state.auth.currentUser._id,
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         protectedData: state.protectedData.data
     };
 };
 
-export default requiresLogin()(connect(mapStateToProps)(reduxForm({ 
+export default requiresLogin()(connect(mapStateToProps)(reduxForm({
     form: 'answerQuestion'
   })(Dashboard)));
