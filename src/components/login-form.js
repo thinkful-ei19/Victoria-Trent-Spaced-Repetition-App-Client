@@ -25,6 +25,8 @@ export class LoginForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
+                <h2>Welcome to Foo App</h2>
+                <div className="separation"></div>
                 <label htmlFor="username">Username</label>
                 <Field
                     component={Input}

@@ -48,20 +48,6 @@ section {
   border-radius: 1px;
 }
 
-.button {
-  width: 10em;
-  margin: 0 auto;
-  margin-left: 25vw;
-  height: 3em;
-}
-
-button:hover {
-  background-color: #FFFBB4;;
-  border-radius: 5px;
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
-
-}
-
 /* Media Queries */
 @media(max-width: 600px) {
   .flexContainer {

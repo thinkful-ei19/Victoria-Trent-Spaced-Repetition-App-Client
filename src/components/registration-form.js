@@ -4,6 +4,8 @@ import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
+import './registration-page.css'
+
 const passwordLength = length({min: 10, max: 72});
 const matchesPassword = matches('password');
 
@@ -23,30 +25,38 @@ export class RegistrationForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
+                <header>
+                  <h2>Register for Foo App</h2>
+                  <p>Fill in this form</p>
+                </header>
+                <div className="separation"></div>
                 <label htmlFor="firstName">First name</label>
-                <Field component={Input} type="text" name="firstName" />
+                <Field component={Input} placeholder="First name" type="text" name="firstName"/>
                 <label htmlFor="lastName">Last name</label>
-                <Field component={Input} type="text" name="lastName" />
-                <label htmlFor="username">Username</label>
+                <Field component={Input} type="text" name="lastName" placeholder="Last Name"/>
+                <label htmlFor="username">Username*</label>
                 <Field
                     component={Input}
                     type="text"
                     name="username"
                     validate={[required, nonEmpty, isTrimmed]}
+                    placeholder="User Name"
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password*</label>
                 <Field
                     component={Input}
                     type="password"
                     name="password"
                     validate={[required, passwordLength, isTrimmed]}
+                    placeholder="Password"
                 />
-                <label htmlFor="passwordConfirm">Confirm password</label>
+                <label htmlFor="passwordConfirm">Confirm password*</label>
                 <Field
                     component={Input}
                     type="password"
                     name="passwordConfirm"
                     validate={[required, nonEmpty, matchesPassword]}
+                    placeholder="Confirm Password"
                 />
                 <button
                     type="submit"
