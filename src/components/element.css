@@ -4,6 +4,34 @@
   text-align: center;
 }
 
+.redTable{
+  background-color: #F56462;
+  position: center;
+  margin: 15px 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 350px;
+  min-height: 350px;
+  text-align: left;
+  word-wrap: break-word;
+  border-radius: 0px;
+  padding: 10px;
+}
+
+.greenTable{
+  background-color: #85F591;
+  position: center;
+  margin: 15px 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 350px;
+  min-height: 350px;
+  text-align: left;
+  word-wrap: break-word;
+  border-radius: 0px;
+  padding: 10px;
+}
+
 .elementTable{
   position: center;
   margin: 15px 15px;
@@ -19,22 +47,18 @@
   padding: 10px;
 }
 
+.periodic{
+  background: black;
+}
 .elementTable:hover {
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
   color: #000000;
 }
 
-h2 {
-  margin-top: 5px;
-  margin-bottom: 0px;
-}
-
-.guessElement{
+.guessElement {
+  margin-top: 45px;
+  margin-bottom: 25px;
   font-size: 20px;
-  padding: 3px 3px;
-  margin-bottom: 6px;
-  margin: 2px 0px;
-  color: #535969;
   border-radius: 1px;
 }
 

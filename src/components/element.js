@@ -4,6 +4,11 @@ import {reduxForm, Field} from 'redux-form';
 import requiresLogin from './requires-login';
 import {fetchProtectedData, submittedAnswer} from '../actions/protected-data';
 import './element.css'
+import styled from 'styled-components';
+
+const elementTable = styled.div`
+  background: ${props => this.props.feedback ? (this.props.feedback.isCorrect ? 'geen' : 'red') : 'white'}
+`
 
 export class Element extends React.Component {
     componentDidMount() {
@@ -21,18 +26,18 @@ export class Element extends React.Component {
             {this.props.feedback ?
             (this.props.feedback.isCorrect ? `You got it!` : `Well..Keep practising`) : 'What is the name of this element?'}
             </h2>
-              <div className="elementTable">
+              <div className={this.props.feedback ? (this.props.feedback.isCorrect ? 'greenTable' : 'redTable') : 'elementTable'}>
                 <div className="number">{this.props.protectedData ? this.props.protectedData.number : ''}</div>
                 <div className="symbol">{this.props.protectedData ? this.props.protectedData.symbol : ''}</div>
                 <div className="name">
-                {this.props.feedback ?  this.props.feedback.answer :
-                <form
-                  className="answer-form"
-                  onSubmit={this.props.handleSubmit(value => this.onSubmit(value.answer))}>
-                <Field component='input' type="text" name="answer"/>
-                </form>}
+                  {this.props.feedback ?  this.props.feedback.answer :
+                  <form
+                    className="answer-form"
+                    onSubmit={this.props.handleSubmit(value => this.onSubmit(value.answer))}>
+                  <Field component='input' type="text" name="answer"/>
+                  </form>}
                 </div>
-                </div>
+              </div>
                 {this.props.feedback ?
                 <button onClick={() => this.props.dispatch(fetchProtectedData())}>
                   Next Question
