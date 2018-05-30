@@ -22,15 +22,16 @@ export class Element extends React.Component {
             (this.props.feedback.isCorrect ? `You got it!` : `Well..Keep practising`) : 'What is the name of this element?'}
             </h2>
               <div className="elementTable">
-                <section>{this.props.feedback ?
-                  (this.props.feedback.isCorrect ? `You got it! ${this.props.feedback.answer}` : `Correct answer is ${this.props.feedback.answer}`) : ''}</section>
-                <div className="symbol">{this.props.protectedData ? this.props.protectedData.symbol : ''}</div>
                 <div className="number">{this.props.protectedData ? this.props.protectedData.number : ''}</div>
+                <div className="symbol">{this.props.protectedData ? this.props.protectedData.symbol : ''}</div>
+                <div className="name">
+                {this.props.feedback ?  this.props.feedback.answer :
                 <form
                   className="answer-form"
                   onSubmit={this.props.handleSubmit(value => this.onSubmit(value.answer))}>
                 <Field component='input' type="text" name="answer"/>
-                </form>
+                </form>}
+                </div>
                 </div>
                 {this.props.feedback ?
                 <button onClick={() => this.props.dispatch(fetchProtectedData())}>
