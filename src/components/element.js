@@ -19,12 +19,45 @@ export class Element extends React.Component {
       return this.props.dispatch(submittedAnswer(value))
     }
 
+    randomPositiveFeedback(){
+      const feedback=[
+        'You got it',
+        'Nice job!',
+        'You got it!',
+        'Victorious!',
+        'Superb!',
+        'Impressive!',
+        'Amazing!',
+        'Fab!',
+        'You on fire!',
+        'Well done!']
+      return this.chooseRandom(feedback)
+    }
+
+    randomNegativeFeedback(){
+      const feedback=[
+        'Well...Keep practising',
+        'Oh boy...',
+        'Really...?',
+        'Not this time',
+        'Try again',
+        'Nope',
+        'You did not do your homework, did ya?']
+      return this.chooseRandom(feedback)
+    }
+
+    chooseRandom(arr){
+      const randomIndex = Math.floor(Math.random() * arr.length)
+      console.log(randomIndex, "random")
+      return arr[randomIndex]
+    }
+
     render() {
         return (
           <div className="elementForm">
             <h2 className="guessElement">
             {this.props.feedback ?
-            (this.props.feedback.isCorrect ? `You got it!` : `Well..Keep practising`) : 'What is the name of this element?'}
+            (this.props.feedback.isCorrect ? this.randomPositiveFeedback() : this.randomNegativeFeedback()) : 'What is the name of this element?'}
             </h2>
               <div className={this.props.feedback ? (this.props.feedback.isCorrect ? 'greenTable' : 'redTable') : 'elementTable'}>
                 <div className="number">{this.props.protectedData ? this.props.protectedData.number : ''}</div>
@@ -48,7 +81,6 @@ export class Element extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state.protectedData.feedback)
     return {
         protectedData: state.protectedData.data,
         username: state.auth.currentUser.username,

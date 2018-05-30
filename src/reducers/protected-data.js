@@ -8,11 +8,13 @@ import {
 const initialState = {
     data: null,
     feedback: null,
+    points: null,
     error: null
 };
 
 export default function reducer(state = initialState, action) {
     if (action.type === FETCH_PROTECTED_DATA_SUCCESS) {
+      console.log(action)
         return Object.assign({}, state, {
             data: action.data,
             feedback: null,
@@ -23,8 +25,10 @@ export default function reducer(state = initialState, action) {
             error: action.error
         });
     } else if (action.type === SUBMITTED_ANSWER_FEEDBACK) {
+      console.log(action)
         return Object.assign({}, state, {
-            feedback: action.data
+            feedback: action.data,
+            points: action.data.points,
         });
     } else if (action.type === SUBMITTED_ANSWER_ERROR) {
         return Object.assign({}, state, {

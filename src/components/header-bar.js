@@ -32,6 +32,11 @@ export class HeaderBar extends React.Component {
                   </Link> : null}
               </li>
               <li>
+                {this.props.loggedIn ? <Link to="/about" className="nav-item">
+                    About
+                  </Link> : null}
+              </li>
+              <li>
                 {this.props.loggedIn ? null : <Link to="/" className="nav-item">
                     Home
                   </Link>}
