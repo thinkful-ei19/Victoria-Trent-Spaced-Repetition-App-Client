@@ -30,11 +30,11 @@ export class RegistrationForm extends React.Component {
                   <p>Fill in this form</p>
                 </header>
                 <div className="separation"></div>
-                <label htmlFor="firstName">First name</label>
+
                 <Field component={Input} placeholder="First name" type="text" name="firstName"/>
-                <label htmlFor="lastName">Last name</label>
+
                 <Field component={Input} type="text" name="lastName" placeholder="Last Name"/>
-                <label htmlFor="username">Username*</label>
+
                 <Field
                     component={Input}
                     type="text"
@@ -42,7 +42,6 @@ export class RegistrationForm extends React.Component {
                     validate={[required, nonEmpty, isTrimmed]}
                     placeholder="User Name"
                 />
-                <label htmlFor="password">Password*</label>
                 <Field
                     component={Input}
                     type="password"
@@ -50,7 +49,6 @@ export class RegistrationForm extends React.Component {
                     validate={[required, passwordLength, isTrimmed]}
                     placeholder="Password"
                 />
-                <label htmlFor="passwordConfirm">Confirm password*</label>
                 <Field
                     component={Input}
                     type="password"

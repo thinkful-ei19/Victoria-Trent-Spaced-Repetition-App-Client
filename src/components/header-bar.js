@@ -22,9 +22,9 @@ export class HeaderBar extends React.Component {
         return <nav className="nav-bar">
             <ul className="nav">
               <li>
-                <Link to="/home" className="nav-item">
-                  Home
-                </Link>
+                {this.props.loggedIn ? null : <Link to="/login" className="nav-item">
+                  Get Started
+                </Link>}
               </li>
               <li>
                 {this.props.loggedIn ? <Link to="/dashboard" className="nav-item">
@@ -33,7 +33,7 @@ export class HeaderBar extends React.Component {
               </li>
               <li>
                 {this.props.loggedIn ? null : <Link to="/" className="nav-item">
-                    Get Started
+                    Home
                   </Link>}
               </li>
               <li className="right">
