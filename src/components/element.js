@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
 import requiresLogin from './requires-login';
 import {fetchProtectedData, submittedAnswer} from '../actions/protected-data';
+import './element.css'
 
 export class Element extends React.Component {
     componentDidMount() {
@@ -16,8 +17,11 @@ export class Element extends React.Component {
     render() {
         return (
           <div className="elementForm">
+            <h2 className="guessElement">
+            {this.props.feedback ?
+            (this.props.feedback.isCorrect ? `You got it!` : `Well..Keep practising`) : 'What is the name of this element?'}
+            </h2>
               <div className="elementTable">
-                <h2 className="guessElement">Guess This Element!</h2>
                 <section>{this.props.feedback ?
                   (this.props.feedback.isCorrect ? `You got it! ${this.props.feedback.answer}` : `Correct answer is ${this.props.feedback.answer}`) : ''}</section>
                 <div className="symbol">{this.props.protectedData ? this.props.protectedData.symbol : ''}</div>
@@ -26,20 +30,19 @@ export class Element extends React.Component {
                   className="answer-form"
                   onSubmit={this.props.handleSubmit(value => this.onSubmit(value.answer))}>
                 <Field component='input' type="text" name="answer"/>
-                <button>
-                  Submit
-                </button>
                 </form>
+                </div>
+                {this.props.feedback ?
                 <button onClick={() => this.props.dispatch(fetchProtectedData())}>
                   Next Question
-                </button>
-            </div>
+                </button> : ""}
           </div>
         );
     }
 }
 
 const mapStateToProps = state => {
+  console.log(state.protectedData.feedback)
     return {
         protectedData: state.protectedData.data,
         username: state.auth.currentUser.username,

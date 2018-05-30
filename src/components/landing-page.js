@@ -12,8 +12,7 @@ export function LandingPage(props) {
 
     return (
         <div className="home">
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+          <img className="image" scr="https://raw.githubusercontent.com/thinkful-ei19/Victoria-Trent-Spaced-Repetition-App-Client/master/src/images/PeriodicTableWorks.png" alt="periodic table"/>
         </div>
     );
 }

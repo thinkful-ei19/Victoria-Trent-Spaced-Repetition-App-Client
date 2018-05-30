@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import Element from './element';
-import './dashboard.css';
 
 export class Dashboard extends React.Component {
 
