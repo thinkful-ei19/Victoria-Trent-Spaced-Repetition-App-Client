@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import './landing-page.css'
 
-import LoginForm from './login-form';
 
 export function LandingPage(props) {
     // If we are logged in redirect straight to the user's dashboard
@@ -11,8 +11,36 @@ export function LandingPage(props) {
     }
 
     return (
-        <div className="home">
-          <img className="image" scr="https://raw.githubusercontent.com/thinkful-ei19/Victoria-Trent-Spaced-Repetition-App-Client/master/src/images/PeriodicTableWorks.png" alt="periodic table"/>
+        <div className="landing">
+          <img className="landingImage" src={require('../images/quimica.jpg')} alt="chemistry"/>
+          <button className="getStartedButton">
+            <Link to="/register">Get Started</Link>
+          </button>
+
+          <div className="descriptionBoxes">
+          <section className="descriptionBox">
+            <h3 className="descriptionTitle">Spaced Repetition</h3>
+            <p>Learn periodic table quickly</p>
+            <p>and retain your knowledge forever</p>
+            <p>with our super-smart</p>
+            <p>repetition algorithm!</p>
+          </section>
+          <section className="descriptionBox">
+            <h3 className="descriptionTitle">Track Progress</h3>
+            <p>Track the progress as you</p>
+            <p>go! The higher your</p>
+            <p>accuracy, the better you</p>
+            <p>know your stuff.</p>
+          </section>
+          <section className="descriptionBox">
+            <h3 className="descriptionTitle">Costumize</h3>
+            <p>Elements is customizable!</p>
+            <p>Pick and choose your</p>
+            <p>settings to maximize</p>
+            <p>your learning</p>
+          </section>
+          </div>
+
         </div>
     );
 }

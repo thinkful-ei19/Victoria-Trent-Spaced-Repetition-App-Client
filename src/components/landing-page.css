@@ -1,0 +1,58 @@
+.landing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landingImage{
+  width: 100%;
+  height: 530px;
+}
+
+
+.getStartedButton{
+    text-decoration: none;
+    width: 120px;
+    margin-top: -22px;
+    padding: 13px;
+    color: white;
+    background-color: #53B5E6;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+    box-shadow: 0px 0px 12px rgba(0,255,255,0.5);
+    border: 1px solid rgba(127,255,255,0.25);
+}
+
+.getStartedButton:hover {
+  box-shadow: 0px 0px 12px rgba(0,255,255,0.75);
+  border: 1px solid rgba(127,255,255,0.75);
+  background-color: #3B72AA;
+  color: #CFFFFF;
+  text-shadow: 0px 0px 2px rgba(0,255,255,0.5);
+}
+
+.descriptionBoxes{
+  display: flex;
+}
+
+.descriptionBox{
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+
+.descriptionTitle{
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 5px 0;
+  color: white;
+  background-color: #53B5E6;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  box-shadow: 0px 0px 12px rgba(0,255,255,0.5);
+}

@@ -78,6 +78,11 @@
   margin-bottom: 10px;
 }
 
+.signUpButton{
+  width: 80%;
+  background: #53B5E6;
+}
+
 /* Media Queries */
 @media(max-width: 600px) {
   .flexContainer {

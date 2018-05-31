@@ -1,6 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
 import './about.css'
 
 export default class About extends React.Component {
@@ -8,7 +6,7 @@ export default class About extends React.Component {
     return (
     <div className="description">
       <div className="about">About Elements</div>
-      <section>
+      <section className="descriptionText">
       <p>This app of the same name implies the same: it is a spaced-repetition</p>
       <p>memorization platform for a Periodic Table. The app displays an element</p>
       <p>showing the symbol and asks users to recall the name.</p>

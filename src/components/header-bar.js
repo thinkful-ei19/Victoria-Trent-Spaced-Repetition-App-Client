@@ -2,13 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
-import { Link } from 'react-router-dom';
+import { Link, Redirect} from 'react-router-dom';
 import './header-bar.css'
 
 export class HeaderBar extends React.Component {
     logOut() {
         this.props.dispatch(clearAuth());
         clearAuthToken();
+        console.log("working")
+        return <Redirect to="/" />;
     }
 
     render() {
@@ -21,9 +23,9 @@ export class HeaderBar extends React.Component {
         }
         return <nav className="nav-bar">
             <ul className="nav">
-              <li>
+              <li className="login">
                 {this.props.loggedIn ? null : <Link to="/login" className="nav-item">
-                  Get Started
+                  Log In
                 </Link>}
               </li>
               <li>
@@ -32,9 +34,9 @@ export class HeaderBar extends React.Component {
                   </Link> : null}
               </li>
               <li>
-                {this.props.loggedIn ? <Link to="/about" className="nav-item">
+                 <Link to="/about" className="nav-item">
                     About
-                  </Link> : null}
+                  </Link>
               </li>
               <li>
                 {this.props.loggedIn ? null : <Link to="/" className="nav-item">

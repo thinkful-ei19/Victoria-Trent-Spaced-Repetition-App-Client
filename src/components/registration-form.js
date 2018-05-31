@@ -27,7 +27,7 @@ export class RegistrationForm extends React.Component {
                 )}>
                 <header>
                   <h2>Register for Foo App</h2>
-                  <p>Fill in this form</p>
+                  <p className="loginLabels">Fill in this form</p>
                 </header>
                 <div className="separation"></div>
 
@@ -57,6 +57,7 @@ export class RegistrationForm extends React.Component {
                     placeholder="Confirm Password"
                 />
                 <button
+                    className="signUpButton"
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Register

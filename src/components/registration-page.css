@@ -16,6 +16,8 @@
     margin-top: 30px;
 }
 
+a { color: inherit; }
+
 header {
     margin-bottom: 30px;
     border-radius: 1px grey;
@@ -24,14 +26,15 @@ header {
 h2 {
     color: #333333;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
-p {
-    color: #8f8f8f;
-    font-size: 14px;
-    font-weight: 300;
-    border-bottom: 1px grey;
+.loginLabels{
+  color: #8f8f8f;
+  font-size: 14px;
+  font-weight: 300;
+  border-bottom: 1px grey;
 }
 
 .separation {
@@ -74,7 +77,7 @@ input:-moz-placeholder {
     color:    #b5b5b5;
 }
 
-button {
+.signUpButton {
     width: 100%;
     margin-top: 20px;
     padding: 15px 0;
@@ -88,7 +91,7 @@ button {
         top,
         #b9c5dd 0%,
         #a4b0cb);
-    background: #B9C5DD;
+    background: #8ABFDD;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -110,6 +113,6 @@ button {
     clear: both;
 }
 
-button:hover {
-    background: #5FA9FF;
+.signUpButton:hover {
+    background: #53B5E6;
 }
