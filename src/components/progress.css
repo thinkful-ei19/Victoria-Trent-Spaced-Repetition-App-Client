@@ -1,0 +1,44 @@
+.progress{
+  text-align: center;
+}
+
+.progressBox{
+  display: flex;
+  justify-content: inline-block;
+}
+
+.littleElement{
+  position: relative;
+  margin: 20px 70px;
+  width: 65px;
+  height: 65px;
+  box-shadow: 0 1px 1px 0 #000000;
+  border: 1px #888888;
+  text-align: center;
+  background-color: #ffbdbd;
+}
+
+.littleElement:hover{
+  box-shadow: 0 3px 5px 0 #000000;
+  border: 1px #888888;
+  text-align: center;
+  width: 165px;
+  min-height: 165px;
+}
+
+.progressElementName{
+  margin-top: -10px;
+  position: relative;
+  color: #ffbdbd;
+  font-size: 15px;
+  font-weight: 100;
+  letter-spacing: 0px;
+}
+
+.progressElementName:hover{
+  position: relative;
+  color: black;
+  font-size: 40px;
+  font-weight: 100;
+  letter-spacing: 0px;
+}

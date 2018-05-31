@@ -37,6 +37,18 @@ export const nextError = data => ({
     data
 });
 
+export const FETCH_STATS_SUCCESS = 'FETCH_STATS_SUCCESS';
+export const fetchStatsSuccess = data => ({
+    type: FETCH_STATS_SUCCESS,
+    data
+});
+
+export const FETCH_STATS_ERROR = 'FETCH_STATS_ERROR';
+export const fetchStatsError = error => ({
+    type: FETCH_STATS_ERROR,
+    error
+});
+
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/questions`, {
@@ -49,11 +61,28 @@ export const fetchProtectedData = () => (dispatch, getState) => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((data) => {
-            console.log(data);
             return dispatch(fetchProtectedDataSuccess(data))
         })
         .catch(err => {
             dispatch(fetchProtectedDataError(err));
+        });
+};
+
+export const fetchStatsData = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/stats`, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then((data) => {
+            return dispatch(fetchStatsSuccess(data))
+        })
+        .catch(err => {
+            dispatch(fetchStatsError(err));
         });
 };
 
@@ -73,7 +102,6 @@ export const submittedAnswer = (name) => (dispatch, getState) => {
     return res.json()
   })
   .then((res) => {
-      console.log(res)
       return dispatch(submittedAnswerFeedback(res))
   })
   .catch(err => {

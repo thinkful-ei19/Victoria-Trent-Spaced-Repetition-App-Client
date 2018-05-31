@@ -3,13 +3,13 @@ import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import { Link, Redirect} from 'react-router-dom';
+import {fetchStatsData} from '../actions/protected-data';
 import './header-bar.css'
 
 export class HeaderBar extends React.Component {
     logOut() {
         this.props.dispatch(clearAuth());
         clearAuthToken();
-        console.log("working")
         return <Redirect to="/" />;
     }
 
@@ -27,6 +27,11 @@ export class HeaderBar extends React.Component {
                 {this.props.loggedIn ? null : <Link to="/login" className="nav-item">
                   Log In
                 </Link>}
+              </li>
+              <li>
+                {this.props.loggedIn ? <Link to="/progress" className="nav-item" onClick={() => this.props.dispatch(fetchStatsData())}>
+                    Progress
+                  </Link> : null}
               </li>
               <li>
                 {this.props.loggedIn ? <Link to="/dashboard" className="nav-item">

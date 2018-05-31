@@ -8,6 +8,7 @@ import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import LoginPage from './login-page';
 import About from './about';
+import Progess from './progress';
 import {refreshAuthToken} from '../actions/auth';
 
 export class App extends React.Component {
@@ -49,6 +50,7 @@ export class App extends React.Component {
                 <Route exact path="/register" component={RegistrationPage} />
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/about" component={About} />
+                <Route exact path="/progress" component={Progess} />
             </div>
         );
     }

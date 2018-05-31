@@ -27,7 +27,9 @@ export class Dashboard extends React.Component {
             <div className="dashboard">
               <div className={this.getPoints()}>
               {this.props.points ? this.props.points : '0'}</div>
-                <Element />
+              <div className="tally">
+                {this.props.tally ? `You got this one correct ${this.props.tally} time` : ''}</div>
+              <Element />
             </div>
         );
     }
@@ -36,7 +38,8 @@ export class Dashboard extends React.Component {
 const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
-        points: state.protectedData.points
+        points: state.protectedData.points,
+        tally: state.protectedData.tally
     };
 };
 

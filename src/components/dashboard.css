@@ -5,46 +5,45 @@
 }
 
 .points{
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  margin-left: 350px;
+  margin-top: 70px;
   color: #0012F5;
-  font-family: 'Press Start 2P', cursive;
-  position: left;
   font-size: 40px;
 }
 
 .points1{
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
   color: #00F565;
-  font-family: 'Press Start 2P', cursive;
   position: left;
   font-size: 40px;
 }
 
 .points2{
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
   color: #F5E82D;
-  font-family: 'Press Start 2P', cursive;
   position: left;
   font-size: 40px;
 }
 
 .points3{
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
   color: #F56F00;
-  font-family: 'Press Start 2P', cursive;
   position: left;
   font-size: 40px;
 }
 
 .points4{
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
   color: #F52200;
-  font-family: 'Press Start 2P', cursive;
+  position: left;
+  font-size: 40px;
+}
+
+.tally{
+  position: absolute;
+  float: left;
+  color: #F52200;
   position: left;
   font-size: 40px;
 }

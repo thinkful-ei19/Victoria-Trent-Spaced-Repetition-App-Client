@@ -44,7 +44,6 @@ export class Element extends React.Component {
 
     chooseRandom(arr){
       const randomIndex = Math.floor(Math.random() * arr.length)
-      console.log(randomIndex, "random")
       return arr[randomIndex]
     }
 
@@ -66,6 +65,7 @@ export class Element extends React.Component {
                   <Field value={this.props.value} component={Input} type="text" name="answer"/>
                   </form>}
                 </div>
+                <div className="atomicWeight">{this.props.protectedData ? this.props.protectedData.atomicWeight : ''}</div>
               </div>
                 {this.props.feedback ?
                 <button className="signUpButton" onClick={() => this.props.dispatch(fetchProtectedData())}>

@@ -6,8 +6,11 @@ export default class About extends React.Component {
     return (
     <div className="description">
       <div className="about">About Elements</div>
-      <section className="descriptionText">
-      <p>This app of the same name implies the same: it is a spaced-repetition</p>
+      <div className="descriptionText">
+      <img className="aboutImage" src={require('../images/element.jpeg')} alt="element"/>
+      <p>The Periodic Table provides the names, atomic numbers, symbols and atomic</p>
+      <p>weights of known elements. It serves as a great tool for solving chemistry problems.</p>
+      <p>This app serves as spaced-repetition</p>
       <p>memorization platform for a Periodic Table. The app displays an element</p>
       <p>showing the symbol and asks users to recall the name.</p>
       <p>Referencing the concept of the Forgetting Curve, the algorithm dynamically</p>
@@ -19,7 +22,7 @@ export default class About extends React.Component {
       <p>finally, move this question "M" spaces back.</p>
 
       <p>Frontend wise, this app is designed with Styled Components and is mobile-responsive. </p>
-      </section>
+      </div>
     </div>
     )
   }

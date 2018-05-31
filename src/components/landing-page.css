@@ -34,11 +34,14 @@
 }
 
 .descriptionBoxes{
+  justify-content: space-evenly;
   display: flex;
+  width: 100%;
 }
 
 .descriptionBox{
   text-align: center;
+  width: 210px;
   font-size: 15px;
   font-weight: 400;
 }
