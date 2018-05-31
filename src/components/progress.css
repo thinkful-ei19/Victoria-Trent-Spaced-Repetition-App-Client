@@ -1,17 +1,35 @@
-.progress{
+li {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+}
+
+.progressHeader{
   text-align: center;
 }
 
+.Progress{
+  display: block;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  height: 200px;
+}
+
 .progressBox{
-  display: flex;
-  justify-content: inline-block;
+  width: 50px;
+  margin-left: 0px;
+  height: 50px;
 }
 
 .littleElement{
-  position: relative;
-  margin: 20px 70px;
-  width: 65px;
-  height: 65px;
+  top: 0;
+  left: 0;
+  bottom: 1px;
+  right: 1px;
   box-shadow: 0 1px 1px 0 #000000;
   border: 1px #888888;
   text-align: center;
@@ -19,26 +37,53 @@
 }
 
 .littleElement:hover{
+  z-index:10;
+  position: relative;
+  background: #53B5E6;
   box-shadow: 0 3px 5px 0 #000000;
   border: 1px #888888;
+  color: white;
   text-align: center;
+  text-shadow: 0px 0px 2px rgba(0,255,255,0.5);
   width: 165px;
   min-height: 165px;
 }
 
 .progressElementName{
-  margin-top: -10px;
-  position: relative;
   color: #ffbdbd;
-  font-size: 15px;
+  font-size: 0px;
+}
+
+.incorrectElement{
+  color: #ffbdbd;
+  font-size: 0px;
+}
+
+.correctElement{
+  color: #ffbdbd;
+  font-size: 0px;
+}
+
+.littleElement:hover .progressElementName {
+  position: relative;
+  color: white;
+  font-size: 20px;
   font-weight: 100;
   letter-spacing: 0px;
 }
 
-.progressElementName:hover{
+.littleElement:hover .correctElement {
   position: relative;
-  color: black;
-  font-size: 40px;
+  color: white;
+  font-size: 10px;
+  font-weight: 100;
+  letter-spacing: 0px;
+}
+
+.littleElement:hover .incorrectElement {
+  position: relative;
+  color: white;
+  font-size: 10px;
   font-weight: 100;
   letter-spacing: 0px;
 }
