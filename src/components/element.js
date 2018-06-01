@@ -48,9 +48,15 @@ export class Element extends React.Component {
     }
 
     chooseRandom(arr){
+      let times = "time"
+      if(this.props.tally > 1) {
+        times = "times"
+      }
       const randomIndex = Math.floor(Math.random() * arr.length)
-      return `You got it right ${this.props.tally} times! ${arr[randomIndex]}`
+      return `You got it right ${this.props.tally} ${times}! ${arr[randomIndex]}`
     }
+
+
 
     nextClick(){
       console.log(this.props.isCardAdded, "ELEMENT")
