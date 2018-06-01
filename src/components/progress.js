@@ -47,7 +47,7 @@ export class Progress extends React.Component {
 
       return (
       <div>
-        <h1 className="progressHeader">Progress</h1>
+        <h1 className="progressHeader">Current Progress</h1>
         <div className="Progress" >
         {progress}
         </div>
@@ -57,7 +57,6 @@ export class Progress extends React.Component {
 }
 
 const mapStateToProps = state => {
-console.log(state.protectedData.stats)
     return {
         username: state.auth.currentUser.username,
         statsList: state.protectedData.stats

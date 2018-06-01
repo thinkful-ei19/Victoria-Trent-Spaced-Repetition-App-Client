@@ -12,7 +12,7 @@ export function LandingPage(props) {
 
     return (
         <div className="landing">
-          <img className="landingImage" src={require('../images/quimica.jpg')} alt="chemistry"/>
+          <img className="landingImage" src={require('../images/Webp.net-resizeimage.jpg')} alt="chemistry"/>
           <button className="getStartedButton">
             <Link to="/register">Get Started</Link>
           </button>
@@ -21,8 +21,8 @@ export function LandingPage(props) {
           <section className="descriptionBox">
             <h3 className="descriptionTitle">Spaced Repetition</h3>
             <p>Learn periodic table quickly</p>
-            <p>and retain your knowledge forever</p>
-            <p>with our super-smart</p>
+            <p>and retain your knowledge</p>
+            <p>forever with our super-smart</p>
             <p>repetition algorithm!</p>
           </section>
           <section className="descriptionBox">

@@ -14,7 +14,7 @@
 }
 
 .greenTable{
-  background-color: #85F591;
+  background-color: #0FC013;
   position: center;
   margin: 15px 15px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -85,8 +85,39 @@
 
 .signUpButton{
   width: 80%;
-  background: #53B5E6;
+  background: #2F3B12; opacity: 0.9;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 2px rgba(0,0,0,0.5);
 }
+
+.endButton{
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+  width: 25px;
+  height: 35px;
+}
+
+.endCheck{
+  font-size: 0px;
+}
+
+.endButton:hover .endCheck{
+  font-size: 15px;
+  z-index:10;
+  position: relative;
+  box-shadow: 0 3px 5px 0 #000000;
+  border: 2px #888888;
+  color:    #b5b5b5;
+  text-align: center;
+  background: white;
+  width: 105px;
+  min-height: 65px;
+}
+
 
 /* Media Queries */
 @media(max-width: 600px) {

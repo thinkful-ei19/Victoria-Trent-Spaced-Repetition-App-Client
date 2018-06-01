@@ -6,44 +6,87 @@
 
 .points{
   position: absolute;
-  margin-left: 350px;
-  margin-top: 70px;
+  opacity: 0.8;
   color: #0012F5;
-  font-size: 40px;
+  font-size: 70px;
 }
 
 .points1{
   position: absolute;
+  opacity: 0.8;
   color: #00F565;
   position: left;
-  font-size: 40px;
+  font-size: 70px;
 }
 
 .points2{
   position: absolute;
+  opacity: 0.8;
   color: #F5E82D;
   position: left;
-  font-size: 40px;
+  font-size: 70px;
 }
 
 .points3{
   position: absolute;
+  opacity: 0.8;
   color: #F56F00;
   position: left;
-  font-size: 40px;
+  font-size: 70px;
 }
 
 .points4{
   position: absolute;
+  opacity: 0.8;
   color: #F52200;
   position: left;
-  font-size: 40px;
+  font-size: 70px;
 }
 
 .tally{
   position: absolute;
-  float: left;
+  margin-left: 350px;
+  margin-top: 170px;
   color: #F52200;
   position: left;
-  font-size: 40px;
+  font-size: 70px;
+}
+
+.score{
+  font-size: 30px;
+}
+.endButton{
+  float: right;
+  border-radius: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+.endButton:hover{
+  z-index:10;
+  position: relative;
+  border-radius: 20px;
+  width: 45px;
+  height: 25px;
+}
+
+.endButton:hover .endName{
+  font-size: 10px;
+}
+
+.endName{
+  font-size: 0px;
+}
+
+.scoreBoard{
+  position: absolute;
+  margin-left: 370px;
+  margin-top: 70px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 120px;
+  min-height: 120px;
+  text-align: left;
+  border-radius: 0px;
+  padding: 10px;
 }

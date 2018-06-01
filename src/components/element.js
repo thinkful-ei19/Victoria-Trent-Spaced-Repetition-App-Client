@@ -55,6 +55,10 @@ export class Element extends React.Component {
             (this.props.feedback.isCorrect ? this.randomPositiveFeedback() : this.randomNegativeFeedback()) : 'What is the name of this element?'}
             </h2>
               <div className={this.props.feedback ? (this.props.feedback.isCorrect ? 'greenTable' : 'redTable') : 'elementTable'}>
+                <button className="endButton">
+                  X
+                  <div className="endCheck">By clicking this button you will end the game and delete your progress</div>
+                </button>
                 <div className="number">{this.props.protectedData ? this.props.protectedData.number : ''}</div>
                 <div className="symbol">{this.props.protectedData ? this.props.protectedData.symbol : ''}</div>
                 <div className="name">

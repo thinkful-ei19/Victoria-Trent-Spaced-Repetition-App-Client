@@ -91,7 +91,8 @@ input:-moz-placeholder {
         top,
         #b9c5dd 0%,
         #a4b0cb);
-    background: #8ABFDD;
+    background-color: #42804A;
+    opacity: 0.7;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -114,5 +115,5 @@ input:-moz-placeholder {
 }
 
 .signUpButton:hover {
-    background: #53B5E6;
+    background: #2F3B12; opacity: 0.9;
 }

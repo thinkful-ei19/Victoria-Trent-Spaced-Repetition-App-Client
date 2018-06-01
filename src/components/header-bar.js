@@ -13,6 +13,10 @@ export class HeaderBar extends React.Component {
         return <Redirect to="/" />;
     }
 
+    colourPick(){
+      let className = ""
+      return (this.props.loggedIn ? className = "nav-item" : className = "navigation-item")
+    }
     render() {
         // Only render the log out button if we are logged in
         let logOutButton;
@@ -22,9 +26,9 @@ export class HeaderBar extends React.Component {
             );
         }
         return <nav className="nav-bar">
-            <ul className="nav">
+            <ul className={this.props.loggedIn ? "nav" : "navigation"}>
               <li className="login">
-                {this.props.loggedIn ? null : <Link to="/login" className="nav-item">
+                {this.props.loggedIn ? null : <Link to="/login" className={this.colourPick()}>
                   Log In
                 </Link>}
               </li>
@@ -39,12 +43,12 @@ export class HeaderBar extends React.Component {
                   </Link> : null}
               </li>
               <li>
-                 <Link to="/about" className="nav-item">
+                 <Link to="/about" className={this.colourPick()}>
                     About
                   </Link>
               </li>
               <li>
-                {this.props.loggedIn ? null : <Link to="/" className="nav-item">
+                {this.props.loggedIn ? null : <Link to="/" className={this.colourPick()}>
                     Home
                   </Link>}
               </li>
