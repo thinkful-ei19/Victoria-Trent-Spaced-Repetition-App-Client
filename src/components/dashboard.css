@@ -7,38 +7,35 @@
 .points{
   position: absolute;
   opacity: 0.8;
-  color: #0012F5;
+  color: #438DFA;
   font-size: 70px;
 }
 
 .points1{
-  position: absolute;
+
   opacity: 0.8;
-  color: #00F565;
+  color: #009445;
   position: left;
   font-size: 70px;
 }
 
 .points2{
-  position: absolute;
   opacity: 0.8;
-  color: #F5E82D;
+  color: #7F7706;
   position: left;
   font-size: 70px;
 }
 
 .points3{
-  position: absolute;
   opacity: 0.8;
-  color: #F56F00;
+  color: #AF610E;
   position: left;
   font-size: 70px;
 }
 
 .points4{
-  position: absolute;
   opacity: 0.8;
-  color: #F52200;
+  color: ##DA0B19;
   position: left;
   font-size: 70px;
 }
@@ -53,7 +50,7 @@
 }
 
 .score{
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: 1px;
 }
@@ -61,6 +58,7 @@
 
 .scoreBoard{
   position: absolute;
+  justify-content: column;
   margin-left: 370px;
   margin-top: 70px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -70,4 +68,21 @@
   text-align: left;
   border-radius: 0px;
   padding: 10px;
+}
+
+.bonus{
+  position: absolute;
+  background: #FFE05E;
+  margin-left: 330px;
+  margin-top: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 170px;
+  min-height: 150px;
+  text-align: left;
+  border-radius: 0px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #444182;
 }

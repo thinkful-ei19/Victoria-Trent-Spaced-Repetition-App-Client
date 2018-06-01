@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
+import {updateStack} from '../actions/protected-data';
 import './progress.css'
 
 export class Progress extends React.Component {
@@ -29,7 +30,6 @@ export class Progress extends React.Component {
                 <p className="incorrectElement">Incorrect answers {incorrect}</p>
               </div>
             </section>
-
           </div>
         )
       })
@@ -50,6 +50,9 @@ export class Progress extends React.Component {
         <h1 className="progressHeader">Current Progress</h1>
         <div className="Progress" >
         {progress}
+        <button className="addCards" onClick={() => this.props.dispatch(updateStack())}>
+          +
+        </button>
         </div>
       </div>
     )

@@ -49,6 +49,17 @@ export const fetchStatsError = error => ({
     error
 });
 
+export const UPDATE_STACK_SUCCESS = 'UPDATE_STACK_SUCCESS';
+export const updateStackSuccess = () => ({
+    type: UPDATE_STACK_SUCCESS
+});
+
+export const UPDATE_STACK_ERROR = 'UPDATE_STACK_ERROR';
+export const updateStackError = error => ({
+    type: UPDATE_STACK_ERROR,
+    error
+});
+
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/questions`, {
@@ -102,9 +113,30 @@ export const submittedAnswer = (name) => (dispatch, getState) => {
     return res.json()
   })
   .then((res) => {
+      if(res.isCardAdded){
+        dispatch(updateStackSuccess())
+      }
       return dispatch(submittedAnswerFeedback(res))
   })
   .catch(err => {
       dispatch(submittedAnswerError(err));
   });
+};
+
+export const updateStack = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/reserve`, {
+        method: 'PUT',
+        headers: { 'Authorization': `Bearer ${authToken}`,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'}
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(() => {
+            return dispatch(updateStackSuccess())
+        })
+        .catch(err => {
+            dispatch(updateStackError(err));
+        });
 };

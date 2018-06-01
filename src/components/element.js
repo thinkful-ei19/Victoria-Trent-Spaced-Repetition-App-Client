@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
 import requiresLogin from './requires-login';
 import {fetchProtectedData, submittedAnswer} from '../actions/protected-data';
+import {updateStack} from '../actions/protected-data';
 import './element.css'
 import Input from './input.js'
 
@@ -12,7 +13,7 @@ export class Element extends React.Component {
     }
 
     onSubmit(value) {
-      return this.props.dispatch(submittedAnswer(value))
+       this.props.dispatch(submittedAnswer(value))
     }
 
     randomPositiveFeedback(){
@@ -51,7 +52,18 @@ export class Element extends React.Component {
       return `You got it right ${this.props.tally} times! ${arr[randomIndex]}`
     }
 
+    nextClick(){
+      console.log(this.props.isCardAdded, "ELEMENT")
+      if(this.props.isCardAdded) {
+        return this.props.dispatch(updateStack())
+              .then(() => this.props.dispatch(fetchProtectedData()))
+      } else {
+        return this.props.dispatch(fetchProtectedData())
+      }
+    }
+
     render() {
+
         return (
           <div className="elementForm">
             <h2 className="guessElement">
@@ -72,7 +84,8 @@ export class Element extends React.Component {
                 <div className="atomicWeight">{this.props.protectedData ? this.props.protectedData.atomicWeight : ''}</div>
               </div>
                 {this.props.feedback ?
-                <button className="next" onClick={() => this.props.dispatch(fetchProtectedData())}>
+                <button className="next"
+                onClick={() => this.nextClick()}>
                   Next Question
                 </button> : ""}
           </div>
@@ -85,8 +98,8 @@ const mapStateToProps = state => {
         protectedData: state.protectedData.data,
         username: state.auth.currentUser.username,
         feedback: state.protectedData.feedback,
-        value: state.protectedData.value,
-        tally: state.protectedData.tally
+        tally: state.protectedData.tally,
+        isCardAdded: state.protectedData.isCardAdded
     };
 };
 

@@ -4,7 +4,9 @@ import {
     SUBMITTED_ANSWER_FEEDBACK,
     SUBMITTED_ANSWER_ERROR,
     FETCH_STATS_SUCCESS,
-    FETCH_STATS_ERROR
+    FETCH_STATS_ERROR,
+    UPDATE_STACK_SUCCESS,
+    UPDATE_STACK_ERROR
 } from '../actions/protected-data';
 
 const initialState = {
@@ -14,6 +16,7 @@ const initialState = {
     points: null,
     tally: null,
     progress: null,
+    isCardAdded: false,
     error: null
 };
 
@@ -22,6 +25,7 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             data: action.data,
             points: action.data.points,
+            isCardAdded: false,
             feedback: null,
             tally: null,
             error: null
@@ -41,7 +45,6 @@ export default function reducer(state = initialState, action) {
             error: action.error
         });
     } else if (action.type === FETCH_STATS_SUCCESS) {
-      console.log(action.data, "called")
         return Object.assign({}, state, {
             stats: action.data,
             error: null
@@ -49,6 +52,14 @@ export default function reducer(state = initialState, action) {
     } else if (action.type === FETCH_STATS_ERROR) {
         return Object.assign({}, state, {
             error: action.error
+        });
+    } else if (action.type === UPDATE_STACK_ERROR) {
+        return Object.assign({}, state, {
+            error: action.error
+        });
+    } else if (action.type === UPDATE_STACK_SUCCESS) {
+        return Object.assign({}, state, {
+            isCardAdded: true
         });
     }
     return state;
