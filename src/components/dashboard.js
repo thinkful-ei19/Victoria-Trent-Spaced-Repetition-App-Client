@@ -25,7 +25,7 @@ export class Dashboard extends React.Component {
   render() {
     return (
           <div className="dashboard">
-            <div className={this.props.isCardAdded ? "scoreBoard" : "scoreBoardBonu"}>
+            <div className={this.props.isCardAdded ? "scoreBoardBonus" : "scoreBoard" }>
               <div className="score">Score</div>
               <div className={this.getPoints()}>
                 {this.props.points ? this.props.points : '0'}

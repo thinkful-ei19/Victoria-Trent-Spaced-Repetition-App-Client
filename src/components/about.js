@@ -18,13 +18,13 @@ export default class About extends React.Component {
       <br></br>
       <p>Referencing the concept of the Forgetting Curve, the algorithm </p>
       <p>dynamically repeats any elements answered wrongfully to help users strengthen memory.</p>
-      <p>Using linked-list data structure and immersing it with MongoDB, the algorithm</p>
+      <p>Using a linked-list data structure and immersing it with MongoDB, the algorithm</p>
       <p>updates the memory value ( "M" ) to each corresponding question as they are answered.</p>
       <p>How frequent a user sees the question repeated depends on this memory value: </p>
       <p>If answered correctly, "M" value doubles; otherwise, "M" value is reset to 1; </p>
       <p>finally, move this question "M" spaces back.</p>
 
-      <p>Frontend wise, this app is designed with Styled Components and is mobile-responsive. </p>
+      <p>This app is designed with Styled Components, is mobile-responsive, and a11y friendly. </p>
       </div>
     </div>
     )

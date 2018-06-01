@@ -33,11 +33,11 @@ export function LandingPage(props) {
             <p>know your stuff.</p>
           </section>
           <section className="descriptionBox">
-            <h3 className="descriptionTitle">Costumize</h3>
-            <p>Elements is customizable!</p>
+            <h3 className="descriptionTitle">Customize</h3>
+            <p>Elements are customizable!</p>
             <p>Pick and choose your</p>
             <p>settings to maximize</p>
-            <p>your learning</p>
+            <p>your learning!(Coming Soon)</p>
           </section>
           </div>
 
