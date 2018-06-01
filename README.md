@@ -8,8 +8,8 @@ Referencing the concept of the Forgetting Curve, the algorithm dynamically repea
 * Visit live version:  
 https://confident-darwin-8cf93d.netlify.com/
 
-Demo Username: user0
-Demo Password: 1234567890
+*Demo Username: user0
+*Demo Password: 1234567890
 
 * Server side code :
 https://github.com/thinkful-ei19/trent-victoria-spaced-repetition-server
