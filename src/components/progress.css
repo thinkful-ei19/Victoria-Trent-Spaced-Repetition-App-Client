@@ -85,7 +85,7 @@ ul {
 .littleElement:hover .correctElement {
   position: relative;
   color: white;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 100;
   letter-spacing: 0px;
 }
@@ -93,7 +93,7 @@ ul {
 .littleElement:hover .incorrectElement {
   position: relative;
   color: white;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 100;
   letter-spacing: 0px;
 }
