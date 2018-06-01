@@ -53,8 +53,9 @@
 .guessElement {
   margin-top: 45px;
   margin-bottom: 25px;
-  font-size: 20px;
-  border-radius: 1px;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .name{
@@ -126,12 +127,12 @@
 }
 
 .endButton{
-  justify-content: space-between;
-  margin-top: 20px;
-  margin-right: 20px;
-  border-radius: 20px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 35px;
   width: 25px;
-  height: 35px;
+  height: 25px;
 }
 
 .endCheck{

@@ -53,30 +53,11 @@
 }
 
 .score{
-  font-size: 30px;
-}
-.endButton{
-  float: right;
-  border-radius: 20px;
-  width: 25px;
-  height: 25px;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
-.endButton:hover{
-  z-index:10;
-  position: relative;
-  border-radius: 20px;
-  width: 45px;
-  height: 25px;
-}
-
-.endButton:hover .endName{
-  font-size: 10px;
-}
-
-.endName{
-  font-size: 0px;
-}
 
 .scoreBoard{
   position: absolute;
