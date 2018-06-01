@@ -72,7 +72,7 @@ export class Element extends React.Component {
                 <div className="atomicWeight">{this.props.protectedData ? this.props.protectedData.atomicWeight : ''}</div>
               </div>
                 {this.props.feedback ?
-                <button className="signUpButton" onClick={() => this.props.dispatch(fetchProtectedData())}>
+                <button className="next" onClick={() => this.props.dispatch(fetchProtectedData())}>
                   Next Question
                 </button> : ""}
           </div>
