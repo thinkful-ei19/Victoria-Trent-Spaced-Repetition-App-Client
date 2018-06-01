@@ -114,7 +114,7 @@ export const submittedAnswer = (name) => (dispatch, getState) => {
   })
   .then((res) => {
       if(res.isCardAdded){
-        dispatch(updateStackSuccess())
+        dispatch(updateStack())
       }
       return dispatch(submittedAnswerFeedback(res))
   })

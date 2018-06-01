@@ -53,13 +53,7 @@ export class Element extends React.Component {
     }
 
     nextClick(){
-      console.log(this.props.isCardAdded, "ELEMENT")
-      if(this.props.isCardAdded) {
-        return this.props.dispatch(updateStack())
-              .then(() => this.props.dispatch(fetchProtectedData()))
-      } else {
         return this.props.dispatch(fetchProtectedData())
-      }
     }
 
     render() {
