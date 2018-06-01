@@ -5,9 +5,14 @@ Elements serves as memorization platform for a Periodic Table. Once users regist
 *The algorithm
 Referencing the concept of the Forgetting Curve, the algorithm dynamically repeats any elements answered wrongfully to help users strengthen memory. Using a linked-list data structure and immersing it with MongoDB, the algorithm updates the memory value ( "M" ) to each corresponding question as they are answered.How frequent a user sees the question repeated depends on this memory value: If answered correctly, "M" value doubles; otherwise, "M" value is reset to 1; finally, move this question "M" spaces back.
 
-* Visit live version:  https://confident-darwin-8cf93d.netlify.com/
+* Visit live version:  
+https://confident-darwin-8cf93d.netlify.com/
+
+Demo Username: user0
+Demo Password: 1234567890
 
 * Server side code :
+https://github.com/thinkful-ei19/trent-victoria-spaced-repetition-server
 
 # Landing Page:
 

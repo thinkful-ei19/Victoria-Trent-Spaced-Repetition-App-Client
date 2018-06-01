@@ -1,0 +1,13 @@
+.loading{
+  opacity: 0.3;
+}
+
+.loadingText{
+  position: absolute;
+  justify-content: center;
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: center;
+}
