@@ -15,6 +15,10 @@ export class Progress extends React.Component {
     return list
   }
 
+  componentDidMount() {
+    this.props.dispatch(fetchStatsData());
+  }
+
   render(){
     let progress = "loading"
     if (this.props.statsList) {
@@ -50,7 +54,10 @@ export class Progress extends React.Component {
         <h1 className="progressHeader">Current Progress</h1>
         <div className="Progress" >
         {progress}
-        <button className="addCards" >
+        <button className="addCards" onClick={() => {
+            return this.props.dispatch(updateStack())
+            .then(() => this.props.dispatch(fetchStatsData()))
+        }}>
           +
         </button>
         </div>

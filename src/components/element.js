@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
 import requiresLogin from './requires-login';
 import {fetchProtectedData, submittedAnswer} from '../actions/protected-data';
-import {updateStack} from '../actions/protected-data';
 import './element.css'
 import Input from './input.js'
 
@@ -59,13 +58,7 @@ export class Element extends React.Component {
 
 
     nextClick(){
-      console.log(this.props.isCardAdded, "ELEMENT")
-      if(this.props.isCardAdded) {
-        return this.props.dispatch(updateStack())
-              .then(() => this.props.dispatch(fetchProtectedData()))
-      } else {
         return this.props.dispatch(fetchProtectedData())
-      }
     }
 
     render() {

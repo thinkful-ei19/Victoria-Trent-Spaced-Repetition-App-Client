@@ -5,7 +5,6 @@ import {clearAuthToken} from '../local-storage';
 import { Link, Redirect} from 'react-router-dom';
 import {fetchStatsData} from '../actions/protected-data';
 import './header-bar.css'
-import withRouter from 'react'
 
 export class HeaderBar extends React.Component {
     logOut() {
