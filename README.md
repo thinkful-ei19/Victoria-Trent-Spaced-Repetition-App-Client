@@ -9,6 +9,26 @@ Referencing the concept of the Forgetting Curve, the algorithm dynamically repea
 
 ![Landing Page](https://github.com/thinkful-ei19/Victoria-Trent-Spaced-Repetition-App-Client/blob/master/src/images/Screen%20Shot%202018-06-01%20at%2020.35.45.png)
 
+# Registering:
+
+![Register](https://github.com/thinkful-ei19/Victoria-Trent-Spaced-Repetition-App-Client/blob/master/src/images/Screen%20Shot%202018-06-01%20at%2020.36.11.png)
+
+# About:
+
+![About](https://github.com/thinkful-ei19/Victoria-Trent-Spaced-Repetition-App-Client/blob/master/src/images/Screen%20Shot%202018-06-01%20at%2020.36.25.png)
+
+# Guessing an Element:
+
+![Guessing an Element](https://github.com/thinkful-ei19/Victoria-Trent-Spaced-Repetition-App-Client/blob/master/src/images/Screen%20Shot%202018-06-01%20at%2020.36.52.png)
+
+# Submitting correct answer:
+
+![Submitting correct answer](https://github.com/thinkful-ei19/Victoria-Trent-Spaced-Repetition-App-Client/blob/master/src/images/Screen%20Shot%202018-06-01%20at%2020.37.03.png)
+
+# Tracking progress:
+
+![Tracking progress](https://github.com/thinkful-ei19/Victoria-Trent-Spaced-Repetition-App-Client/blob/master/src/images/Screen%20Shot%202018-06-01%20at%2020.37.23.png)
+
 # Elements is built utilizing the MERN stack:
 
 * Front End: React/Redux
