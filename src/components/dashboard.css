@@ -5,7 +5,7 @@
 }
 
 .points{
-  position: absolute;
+
   opacity: 0.8;
   color: #438DFA;
   font-size: 70px;
@@ -72,8 +72,8 @@
 
 .scoreBoardBonus{
   position: absolute;
-  background: #FFE05E;
   justify-content: column;
+  background: #FFE05E;
   margin-left: 330px;
   margin-top: 50px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
