@@ -13,8 +13,7 @@ export default class About extends React.Component {
       <br></br>
       <p>This app serves as memorization platform for a Periodic Table.</p>
       <p>The app displays an element showing the symbol and asks users to input the name </p>
-      <p>of the emement. User can see instant feedback on the screen and track progress </p>
-      <p>in the long term.</p>
+      <p>of the element. User can see instant feedback on the screen and track progress. </p>
       <br></br>
       <p>Referencing the concept of the Forgetting Curve, the algorithm </p>
       <p>dynamically repeats any elements answered wrongfully to help users strengthen memory.</p>
