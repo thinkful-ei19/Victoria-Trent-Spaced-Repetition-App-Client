@@ -126,32 +126,6 @@
   background: #008282;
 }
 
-.endButton{
-  float: right;
-  margin-top: 10px;
-  margin-right: 10px;
-  border-radius: 35px;
-  width: 25px;
-  height: 25px;
-}
-
-.endCheck{
-  font-size: 0px;
-}
-
-.endButton:hover .endCheck{
-  font-size: 15px;
-  z-index:10;
-  position: relative;
-  box-shadow: 0 3px 5px 0 #000000;
-  border: 2px #888888;
-  color:    #b5b5b5;
-  text-align: center;
-  background: white;
-  width: 105px;
-  min-height: 65px;
-}
-
 
 /* Media Queries */
 @media(max-width: 600px) {

@@ -5,6 +5,7 @@ import {clearAuthToken} from '../local-storage';
 import { Link, Redirect} from 'react-router-dom';
 import {fetchStatsData} from '../actions/protected-data';
 import './header-bar.css'
+import withRouter from 'react'
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -33,6 +34,11 @@ export class HeaderBar extends React.Component {
                 </Link>}
               </li>
               <li>
+                 <Link to="/about" className={this.colourPick()}>
+                    About
+                  </Link>
+              </li>
+              <li>
                 {this.props.loggedIn ? <Link to="/progress" className="nav-item" onClick={() => this.props.dispatch(fetchStatsData())}>
                     Progress
                   </Link> : null}
@@ -41,11 +47,6 @@ export class HeaderBar extends React.Component {
                 {this.props.loggedIn ? <Link to="/dashboard" className="nav-item">
                     Learn
                   </Link> : null}
-              </li>
-              <li>
-                 <Link to="/about" className={this.colourPick()}>
-                    About
-                  </Link>
               </li>
               <li>
                 {this.props.loggedIn ? null : <Link to="/" className={this.colourPick()}>

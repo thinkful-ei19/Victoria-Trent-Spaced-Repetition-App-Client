@@ -21,40 +21,24 @@ export class Dashboard extends React.Component {
     return points
   }
 
-  tally(){
-    let char = ""
-    for(let i = 0; i < this.props.tally; i++){
-      if(i % 5 === 0){
-         char = "卌"
-      } else {char += "|"
-      }
-    }
-    return char
-  }
-
-    render() {
-      let count = this.tally(this.props.tally)
-      return (
-            <div className="dashboard">
-              <div className="scoreBoard">
-                <div className="score">Score</div>
-                <div className={this.getPoints()}>
-                  {this.props.points ? this.props.points : '0'}</div>
-                </div>
-              <div className="tally">
-                {count}
+  render() {
+    return (
+          <div className="dashboard">
+            <div className="scoreBoard">
+              <div className="score">Score</div>
+              <div className={this.getPoints()}>
+                {this.props.points ? this.props.points : '0'}</div>
               </div>
-              <Element />
-            </div>
-        );
-    }
+            <Element />
+          </div>
+      );
+  }
 }
 
 const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
-        points: state.protectedData.points,
-        tally: state.protectedData.tally
+        points: state.protectedData.points
     };
 };
 

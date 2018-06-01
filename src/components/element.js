@@ -17,15 +17,14 @@ export class Element extends React.Component {
 
     randomPositiveFeedback(){
       const feedback=[
-        'You got it',
-        'Nice job!',
-        'You got it!',
+        'Rockin-it!',
+        'Nice!',
         'Victorious!',
         'Superb!',
         'Impressive!',
         'Amazing!',
         'Fab!',
-        'You on fire!',
+        'On fire!',
         'Well done!']
       return this.chooseRandom(feedback)
     }
@@ -39,12 +38,17 @@ export class Element extends React.Component {
         'Try again',
         'Nope',
         'You did not do your homework, did you?']
-      return this.chooseRandom(feedback)
+      return this.chooseRandomNegative(feedback)
+    }
+
+    chooseRandomNegative(arr){
+      const randomIndex = Math.floor(Math.random() * arr.length)
+      return arr[randomIndex]
     }
 
     chooseRandom(arr){
       const randomIndex = Math.floor(Math.random() * arr.length)
-      return arr[randomIndex]
+      return `You got it right ${this.props.tally} times! ${arr[randomIndex]}`
     }
 
     render() {
@@ -55,10 +59,6 @@ export class Element extends React.Component {
             (this.props.feedback.isCorrect ? this.randomPositiveFeedback() : this.randomNegativeFeedback()) : 'What is the name of this element?'}
             </h2>
               <div className={this.props.feedback ? (this.props.feedback.isCorrect ? 'greenTable' : 'redTable') : 'elementTable'}>
-                <button className="endButton">
-                  X
-                  <div className="endCheck">By clicking this button you will end the game and delete your progress</div>
-                </button>
                 <div className="number">{this.props.protectedData ? this.props.protectedData.number : ''}</div>
                 <div className="symbol">{this.props.protectedData ? this.props.protectedData.symbol : ''}</div>
                 <div className="name">
@@ -85,7 +85,8 @@ const mapStateToProps = state => {
         protectedData: state.protectedData.data,
         username: state.auth.currentUser.username,
         feedback: state.protectedData.feedback,
-        value: state.protectedData.value
+        value: state.protectedData.value,
+        tally: state.protectedData.tally
     };
 };
 
