@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
 import requiresLogin from './requires-login';
 import {fetchProtectedData, submittedAnswer} from '../actions/protected-data';
-import {updateStack} from '../actions/protected-data';
 import './element.css'
 import Input from './input.js'
 
